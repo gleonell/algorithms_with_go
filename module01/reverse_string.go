@@ -1,18 +1,14 @@
 package main
 
-import (
-		"fmt"
-		"unicode/utf8"
-	)
-
-
+import "fmt"
 
 func Reverse(word string) string {
-	reversed := []rune{}
-	for i := utf8.RuneCountInString(word) - 1; i >= 0; i-- {
-		reversed = append(reversed, rune(word[i]))
+	var reversed string
+
+	for _, r := range word {
+		reversed = string(r) + reversed
 	}
-	return string(reversed)
+	return reversed
 }
 
 func main() {
